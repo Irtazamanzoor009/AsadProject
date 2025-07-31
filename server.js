@@ -27,6 +27,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 } // 24 hours
 }));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // Serve static files
 app.use(express.static('.'));
