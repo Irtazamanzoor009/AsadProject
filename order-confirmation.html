@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                    <li id="auth-menu">
+                        <a href="login.html" id="login-link">Login</a>
+                        <a href="register.html" id="register-link">Register</a>
+                        <a href="#" id="logout-link" style="display: none;" onclick="logout()">Logout</a>
+                        <span id="user-name" style="display: none;"></span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Order Confirmation Section -->
+    <div class="container">
+        <div style="text-align: center; margin: 50px 0;">
+            <h1 style="color: #4CAF50; font-size: 48px; margin-bottom: 20px;">✅ Order Confirmed!</h1>
+        </div>
+        
+        <div id="order-details" style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <!-- Order details will be loaded dynamically -->
+        </div>
+        
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="#" class="btn" style="margin-right: 20px; background: #e74c3c;">Continue Shopping</a>
+            <a href="#" class="btn" style="background: #3498db;">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p> Flowers & Coffee Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="public/js/main.js"></script>
+    <script>
+        // Load order confirmation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderConfirmation();
+            updateAuthUI();
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>
+
